@@ -2,6 +2,7 @@ import React from 'react'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 import {Route} from 'react-router-dom'
+import showBooks from './reac-components/showBooks.js'
 
 class BooksApp extends React.Component {
   state = {
@@ -27,7 +28,7 @@ getBooks = () => {
     return (
       <div className="app">
         // route for display books
-        <Route exact path='/' render={() => ()}/>
+        <Route exact path='/' render={() => (<showBooks books={books} /> getBooks={this.getBooks}}/>
       </div>
 
       // <div className="app">
