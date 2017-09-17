@@ -28,7 +28,7 @@ getBooks = () => {
     return (
       <div className="app">
         // route for display books
-        <Route exact path='/' render={() => (<showBooks books={books} /> getBooks={this.getBooks}}/>
+        <Route exact path='/' render={() => (<showBooks books={books} getBooks={this.getBooks} )/>
       </div>
 
       // <div className="app">
