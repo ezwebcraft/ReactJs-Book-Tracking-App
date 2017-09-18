@@ -27,7 +27,8 @@ render(){
                 width: 128,
                 height: 193,
                 backgroundImage: `url("${imageURL}")`
-              }}></div>
+              }}>
+            </div>
             <div className="book-shelf-changer">
               <select onChange={this.updateShelf} value={this.props.shelf}>
                 <option value="none" disabled>Move to...</option>
@@ -43,10 +44,12 @@ render(){
             <div
               className="book-authors"
               key={index}
-            >{`${author}`}</div>
+            >
+            {`${author}`}
+           </div>
           ))}
         </div>
-
+        </li>
 		)
 
 	}
