@@ -34,7 +34,6 @@ placeBookToShelf = (book, shelf) => {
     const {books} = this.state;
     return (
       <div className="app">
-
         <Route exact path='/' render={() => (<showBooks books={books} placeBookToShelf={this.placeBookToShelf} getBooks={this.getBooks} /> )} />
       </div>
 
