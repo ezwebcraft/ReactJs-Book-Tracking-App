@@ -1,57 +1,34 @@
-import React, { Component } from 'react'
-import { PropTypes }  from 'prop-types'
+import React, {Component} from 'react';
+import PropTypes from 'prop-types';
+import selectBooks from './selectBooks';
 
-
-export default class Book extends Component {
-
-static propTypes = {
-	imageURL: PropTypes.object.isRequired,
-    title: PropTypes.string.isRequired,
-    author: PropTypes.array,
-    shelf: PropTypes.string.isRequired,
+class Book extends Component {
+  static propTypes = {
+    book: PropTypes.object.isRequired,
     updateBookShelf: PropTypes.func.isRequired
-	}
-
-updateShelf = (e) => {
-    this.props.updateBookShelf(e.target.value)
   }
 
-
-render(){
-	const imageURL = this.props.imageURL.thumbnail || this.props.imageURL.smallThumbnail;
-	return (
-			<li>
-        <div className="book">
-          <div className="book-top">
-            <div className="book-cover" style={{
-                width: 128,
-                height: 193,
-                backgroundImage: `url("${imageURL}")`
-              }}>
-            </div>
-            <div className="book-shelf-changer">
-              <select onChange={this.updateShelf} value={this.props.shelf}>
-                <option value="none" disabled>Move to...</option>
-                <option value="currentlyReading">Currently Reading</option>
-                <option value="wantToRead">Want to Read</option>
-                <option value="read">Read</option>
-                <option value="none">None</option>
-              </select>
-            </div>
+  render() {
+    const {book, updateBookShelf} = this.props
+    var authors = (book.authors === undefined) ? [] : book.authors;
+    const coverStyle = {
+      width: 128,
+      height: 193,
+      backgroundImage: `url('${book.imageLinks.smallThumbnail}')`
+    }
+    return (
+      <li key={book.id}>
+        <div className='book'>
+          <div className='book-top'>
+            <a href={book.infoLink} target='_blank'><div className='book-cover' style={coverStyle}/></a>
+            <selectBooks book={book} updateBookShelf={updateBookShelf}/>
           </div>
-          <div className="book-title">{`${this.props.title}`}</div>
-          {this.props.author && this.props.author.map((author,index)=>(
-            <div
-              className="book-authors"
-              key={index}
-            >
-            {`${author}`}
-           </div>
-          ))}
+          <div className='book-title'>{book.title}</div>
+          <div className='book-authors'>{`by ${authors.join(', ')}`}</div>
         </div>
-    </li>
-		)
-
-	}
-
+      </li>
+    )
+  }
 }
+
+export default Book;

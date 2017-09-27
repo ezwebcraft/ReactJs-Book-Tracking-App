@@ -8,19 +8,19 @@ static propTypes = {
 
 	title: PropTypes.string.isRequired,
     books: PropTypes.array.isRequired,
-    bookToShelf: PropTypes.func.isRequired
+    updateBookShelf: PropTypes.func.isRequired
 }
 
  render() {
 
- 	const {books, title, bookToShelf} = this.props;
+ 	const {books, title, updateBookShelf} = this.props;
 
  		return(
                 <div className="bookshelf">
                   <h2 className="bookshelf-title">Currently Reading</h2>
                   <div className="bookshelf-books">
                     <ol className="books-grid">
-                    	 {books.map((book) => (<Book key={book.id} book={book} bookToShelf={bookToShelf}/>))}
+                    	 {books.map((book) => (<Book key={book.id} book={book} updateBookShelf={updateBookShelf}/>))}
          			</ol>
         		  </div>
       			</div>
