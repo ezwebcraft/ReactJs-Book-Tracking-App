@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-class SelectBooks extends Component {
+class Select_Books extends Component {
  static propTypes = {
     book: PropTypes.object.isRequired,
     updateShelf: PropTypes.func.isRequired
@@ -29,4 +29,4 @@ class SelectBooks extends Component {
 
 }
 
-export default SelectBooks;
+export default Select_Books;
