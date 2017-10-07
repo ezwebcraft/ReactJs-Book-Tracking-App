@@ -57,6 +57,49 @@ class searchForBooks extends Component {
     this.searchForBooks(this.state.query);
   }
 
+  render() {
+    const { query, books } = this.state
+    const { updateShelf } = this.props
+
+    books.sort(sortBy('title'))
+    return (
+      <div className='search-books'>
+        <div className='search-books-bar'>
+          <Link className='close-search' to='/'>Close</Link>
+          <div className='search-books-input-wrapper'>
+            <input
+              type='text'
+              placeholder='Search by title or author'
+              value={query}
+              onChange={(event) => this.updateQuery(event.target.value)}
+            />
+          </div>
+        </div>
+
+        <div className='search-books-results'>
+          <ol className='books-grid'>
+            {books.map((book) => (
+              <Book
+                key={book.id}
+                book={book}
+                updateShelf={(book, shelf) => {
+                  updateShelf(book, shelf);
+                  this.setState(status => ({
+                    books: status.books.map(b => {
+                      if (book.id === b.id) {
+                        b.shelf = shelf;
+                      }
+                      return b;
+                    })
+                  }));
+                }}
+              />
+            ))}
+          </ol>
+        </div>
+      </div>
+    )
+  }
 
 }
 
