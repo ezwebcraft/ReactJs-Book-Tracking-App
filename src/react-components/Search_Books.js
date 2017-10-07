@@ -36,6 +36,18 @@ class searchForBooks extends Component {
   }
 
 
+    updateBookShelfFromLibraryBook = (book) => {
+    const {books} = this.props;
+    const libraryBook = books.find((libraryBook) => (libraryBook.id === book.id));
+    if (libraryBook) {
+      book.shelf = libraryBook.shelf;
+    } else {
+      book.shelf = 'none';
+    }
+    return book;
+  }
+
+
 }
 
 export default searchForBooks
