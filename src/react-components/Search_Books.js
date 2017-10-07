@@ -17,6 +17,24 @@ class searchForBooks extends Component {
     books: [],
   }
 
+    searchForBooks = (query) => {
+    if (query) {
+      BooksAPI.search(query.trim()).then(response => {
+        let books = [];
+        if (Array.isArray(response)) {
+          books = response;
+        }
+        if (Array.isArray(response.books)) {
+          books = response.books;
+        }
+        books.map((book) => {this.updateBookShelfFromLibraryBook(book);})
+        this.setState({books});
+      });
+    } else {
+      this.setState({books: []});
+    }
+  }
+
 
 }
 
