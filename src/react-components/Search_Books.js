@@ -48,6 +48,16 @@ class searchForBooks extends Component {
   }
 
 
+   updateQuery = (query) => {
+    this.setState({ query });
+    this.searchForBooks(query);
+  }
+
+  componentDidMount() {
+    this.searchForBooks(this.state.query);
+  }
+
+
 }
 
 export default searchForBooks
