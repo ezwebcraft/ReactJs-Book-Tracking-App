@@ -5,7 +5,7 @@ import sortBy from 'sort-by'
 import Book from './Book'
 import * as BooksAPI from '../BooksAPI'
 
-class searchForBooks extends Component {
+class Search_books extends Component {
 
   static propTypes = {
     updateShelf: PropTypes.func.isRequired,
@@ -14,10 +14,10 @@ class searchForBooks extends Component {
 
   state = {
     query: '',
-    books: [],
+    books: []
   }
 
-    searchForBooks = (query) => {
+    Search_books = (query) => {
     if (query) {
       BooksAPI.search(query.trim()).then(response => {
         let books = [];
@@ -50,11 +50,11 @@ class searchForBooks extends Component {
 
    updateQuery = (query) => {
     this.setState({ query });
-    this.searchForBooks(query);
+    this.Search_books(query);
   }
 
   componentDidMount() {
-    this.searchForBooks(this.state.query);
+    this.Search_books(this.state.query);
   }
 
   render() {
@@ -103,4 +103,4 @@ class searchForBooks extends Component {
 
 }
 
-export default searchForBooks
+export default Search_books

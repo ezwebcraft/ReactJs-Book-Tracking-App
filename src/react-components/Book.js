@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import SelectBooks from './SelectBooks';
+import Select_Books from './Select_Books';
 
 class Book extends Component {
   static propTypes = {
@@ -21,7 +21,7 @@ class Book extends Component {
         <div className='book'>
           <div className='book-top'>
             <a href={book.infoLink} target='_blank'><div className='book-cover' style={coverStyle}/></a>
-            <SelectBooks book={book} updateShelf={updateShelf}/>
+            <Select_Books book={book} updateShelf={updateShelf}/>
           </div>
           <div className='book-title'>{book.title}</div>
           <div className='book-authors'>{`by ${authors.join(', ')}`}</div>
