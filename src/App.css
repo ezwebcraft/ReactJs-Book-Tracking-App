@@ -5,14 +5,15 @@ body {
   line-height: 1.5;
 }
 body, .app {
-  background: white;
+    background-image: url(https://images.freecreatives.com/wp-content/uploads/2016/02/Full-HD-Wood-Background-Wallpaper.jpg);
+
 }
 
 /* main page */
 
 .list-books-title {
   padding: 10px 0;
-  background: #2e7c31;
+  background: #855E42;
   text-align: center;
 }
 .list-books-title h1 {
@@ -39,6 +40,8 @@ body, .app {
 .bookshelf-title {
   border-bottom: 1px solid #dedede;
   text-align: center;
+  font-family: 'Pacifico', cursive;
+  color: white;
 }
 .bookshelf-books {
   text-align: center;
@@ -126,12 +129,13 @@ body, .app {
 .book-title,
 .book-authors {
   font-size: 0.8em;
+  color: white;
 }
 .book-title {
   margin-top: 10px;
 }
 .book-authors {
-  color: #999;
+  color: #ddd;
 }
 
 .book-top {
