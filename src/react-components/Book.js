@@ -14,7 +14,7 @@ class Book extends Component {
     const coverStyle = {
       width: 130,
       height: 200,
-      backgroundImage: `url('${book.imageLinks.smallThumbnail}')`
+      backgroundImage: `url('${book.imageLinks.smallThumbnail ? book.imageLinks.thumbnail : ''}')`
     }
     return (
       <li key={book.id}>
