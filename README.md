@@ -1,5 +1,11 @@
 This is My first project for [Udacity](https://www.udacity.com)'s [React Developer Nanoderee](https://www.udacity.com/course/react-nanodegree--nd019)
 
+## :computer: Quickstart
+
+1. Clone the repo
+2. cd into the project root and run `npm install`
+3. run `npm start`
+4. open in your default browser.
 
 ## info about the project
 
