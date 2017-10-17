@@ -9,6 +9,14 @@ This is My first project for [Udacity](https://www.udacity.com)'s [React Develop
 
 ## info about the project
 
+### books example
+
+![books](./searchbooks.png)
+
+### search example
+
+![search](./Books.png)
+
 ### Backend Server
 
 To simplify your development process, we've provided a backend server for you to develop against. The provided file [`BooksAPI.js`](src/BooksAPI.js) contains the methods you will need to perform necessary operations on the backend:

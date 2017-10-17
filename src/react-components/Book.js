@@ -9,12 +9,12 @@ class Book extends Component {
   }
 
   render() {
-    const {book, updateShelf} = this.props
+    const {book, updateShelf} = this.props;
     var authors = (book.authors === undefined) ? [] : book.authors;
     const coverStyle = {
       width: 130,
       height: 200,
-      backgroundImage: `url('${book.imageLinks.smallThumbnail ? book.imageLinks.thumbnail : ''}')`
+      backgroundImage: `url('${book.imageLinks.smallThumbnail !== undefined ? book.imageLinks.smallThumbnail : "http://via.placeholder.com/128x193?text=No%20Cover" }')`
     }
     return (
       <li key={book.id}>
