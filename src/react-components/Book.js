@@ -14,7 +14,7 @@ class Book extends Component {
     const coverStyle = {
       width: 130,
       height: 200,
-      backgroundImage: `url('${book.imageLinks.smallThumbnail !== undefined ? book.imageLinks.smallThumbnail : "http://via.placeholder.com/128x193?text=No%20Cover" }')`
+      backgroundImage: `url('${book.imageLinks !== undefined ? book.imageLinks : "http://via.placeholder.com/128x193?text=No%20Cover" }')`
     }
     return (
       <li key={book.id}>
